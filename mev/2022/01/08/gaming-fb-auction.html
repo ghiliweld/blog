@@ -113,7 +113,7 @@ window.onload = wrap_img;
   <div class="post-content e-content" itemprop="articleBody">
     <p>After following the MEV space for a while, I wanted to try my hand at building a searcher bot during my winter break from school. I had an idea for an interesting sandwiching strategy (might write about it later), but since my bot would be using flashbots I’d have to find a way to win the flashbots auction while still maximizing profits. Sandwiching is a competitive field and so vying for the same sandwiching opportunity as countless other searchers would force me to give away profits to guarantee winning the auction. You walk away with less, but at least it’s something.</p>
 
-<p>But what if there was a way to game the auction, so that you can secure a spot at the top of a block <em>without</em> giving away most of your profit? It’s like having your cake and eating it too, but the cake is money (loads of it). My attempt at doing so is what this post is about. Althought it didn’t work, I still think it wasn’t a terrible idea and I learned something new about geth in the end.</p>
+<p>But what if there was a way to game the auctions so that you can secure a spot at the top of a block <em>without</em> giving away most of your profit? It’s like having your cake and eating it too, but the cake is money (loads of it). My attempt at doing so is what this post is about. Althought it didn’t work, I still think it wasn’t a terrible idea and I learned something new about geth in the end.</p>
 
 <h2 id="some-background">Some Background</h2>
 
@@ -165,6 +165,8 @@ window.onload = wrap_img;
 <hr />
 
 <p>Like I said in the beginning, this wasn’t my worst idea ever. I just wasn’t expecting geth to intervene like that when I saw on ethereum’s website that any gas under 21k is consumed whether the tx reverts or not. I later realized that that was describing the EVM’s behaviour, not the client’s (geth) which was free to implement any checks beforehand. Unfortunate.</p>
+
+<p>Edit: Apparently this is standard client behaviour as described in section 6 of the <a href="https://ethereum.github.io/yellowpaper/paper.pdf">yellowpaper</a> and not unique to geth (s/o to the homie <a href="https://twitter.com/0xalpharush">@0xalpharush</a> for pointing this out). But that was in the Berlin version of the yellowpaper, so now I’m still not sure if the official site was completely wrong or just outdated. That’s on me though, I should’ve just read the code for myself first instead of going off the website.</p>
 
 <p>I’m still not interested in being an optimizooor despite not being able to game the auction, and I learned just how involved building a competitive searcher bot is over my winter break. It’s definitely not something I can slap together in 2 weeks like I originally planned. I’ll see how I end up going about this mev shit but I’ll have to take my time with it if I wanna be competitive.</p>
 
