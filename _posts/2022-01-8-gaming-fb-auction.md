@@ -29,6 +29,7 @@ I'm lazy and I only had about 2 weeks until I started school again, so I wasn't 
 
 The strat entailed making use of this fun little fact about gas limits:
 > [I]f you put a gas limit of 50,000 for a simple ETH transfer, the EVM would consume 21,000, and you would get back the remaining 29,000. However, if you specify too little gas, for example, a gas limit of 20,000 for a simple ETH transfer, the EVM will consume your 20,000 gas units attempting to fulfill the transaction, but it will not complete. The EVM then reverts any changes, but since the miner has already done 20k gas units worth of work, that gas is consumed.
+
 from [ethereum.org](https://ethereum.org/en/developers/docs/gas/#what-is-gas-limit)
 
 Note that the definition of the effective gas price didn't require that any of our smart contract txs pay the bribe to the miner. Say we included an eth transfer in our bundle that handled our bribe, and that we set the gas limit to `1 gas` and the gas price to `100k gwei/gas`. We'd need to allow this tx to revert in our bundle (via `revertingTxHashes`) since any tx with a gas limit lower than 21k gas would revert. Our bundle could then land onchain, revert, and only consume 1 gas in doing so. This will only cost us `1 gas * 100k gwei/gas = 100k gwei` and our bundle's score would be boosted by `100k` which guarantees us first priority in the auction by a large margin. We can then safely set the gas price on our swaps to whatever the `base_fee` was that block since we don't wanna compete on gas price with high gas txs.
