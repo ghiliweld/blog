@@ -3,7 +3,7 @@ toc: false
 layout: post
 description: Trying to game the Flashbots auction.
 categories: [mev]
-title: Trying to Game the Flashbots Auction and Failing Miserably
+title: Lessons Learned from Trying to Game the Flashbots Auction
 ---
 
 After following the MEV space for a while, I wanted to try my hand at building a searcher bot during my winter break from school. I had an idea for an interesting sandwiching strategy (might write about it later), but since my bot would be using flashbots I'd have to find a way to win the flashbots auction while still maximizing profits. Sandwiching is a competitive field and so vying for the same sandwiching opportunity as countless other searchers would force me to give away profits to guarantee winning the auction. You walk away with less, but at least it's something.
