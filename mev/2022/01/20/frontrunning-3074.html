@@ -142,20 +142,13 @@ window.onload = wrap_img;
 
 <h2 id="extract-and-rewrap">Extract and Rewrap</h2>
 
-<ul>
-  <li>a 3074 tx is like a multicall</li>
-  <li>we already know searchers are looking at internal calls made</li>
-  <li>a searcher could extract, rewrap and submit other’s internal calls</li>
-  <li>demonstrate 1-tx-sandwich</li>
-</ul>
-
 <p>One way of thinking about 3074 txs is like multicalls that <em>anyone</em> can do on your behalf provided they have the commitment and your signature. The individuals calls to other contracts will look like regular internal contract calls to anyone viewing your transaction. This is where the fun part starts. If you’ve read <a href="https://www.paradigm.xyz/2020/08/ethereum-is-a-dark-forest/">Ethereum is a Dark Forest</a> then you’ll know that advanced searchers are lurking in the mempool for any profitable transactions, even going so far as to look over <em>internal calls</em> that they can frontrun. What happens when a 3074 tx is making internal calls that we can not only frontrun, but extract and include in our tx instead? A quick example can demonstrate why a searcher would do that.</p>
 
-<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sandwich tx 1 (buy)                                             sandwich tx {
-victim's 3074 tx {                                                  - sandwich buy
-<span class="p">    -</span> DEX swap (this is an internal call)       vs                  - victim's DEX swap (that we extracted)
-}                                                                   - sandwich sell
-sandwich tx 2 (sell)                                            }
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sandwich tx 1 (buy)                                         sandwich tx {
+victim's 3074 tx {                                              - sandwich buy
+<span class="p">    -</span> DEX swap (this is an internal call)       vs              - victim's DEX swap (that we extracted)
+}                                                               - sandwich sell
+sandwich tx 2 (sell)                                        }
 </code></pre></div></div>
 
 <p>We were able to sandwich an incoming 3074 tx the traditional way (over 3 txs) or we could extract the commitment and signature details from the pending DEX swap and place it in our own tx, that way we could execute a sandwich in only one trade! We get some interesting results from this:</p>
