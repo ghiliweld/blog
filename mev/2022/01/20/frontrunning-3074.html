@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="twitter:card" content="summary_large_image" /><!-- Begin Jekyll SEO tag v2.7.1 -->
+<title>Frontrunning Post EIP-3074 | ghilia</title>
+<meta name="generator" content="Jekyll v4.1.1" />
+<meta property="og:title" content="Frontrunning Post EIP-3074" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Studying New Possibilities and Cause for Concern" />
+<meta property="og:description" content="Studying New Possibilities and Cause for Concern" />
+<link rel="canonical" href="https://ghiliweld.github.io/blog/mev/2022/01/20/frontrunning-3074.html" />
+<meta property="og:url" content="https://ghiliweld.github.io/blog/mev/2022/01/20/frontrunning-3074.html" />
+<meta property="og:site_name" content="ghilia" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2022-01-20T00:00:00-06:00" />
+<meta name="twitter:card" content="summary" />
+<meta property="twitter:title" content="Frontrunning Post EIP-3074" />
+<script type="application/ld+json">
+{"headline":"Frontrunning Post EIP-3074","url":"https://ghiliweld.github.io/blog/mev/2022/01/20/frontrunning-3074.html","dateModified":"2022-01-20T00:00:00-06:00","datePublished":"2022-01-20T00:00:00-06:00","@type":"BlogPosting","mainEntityOfPage":{"@type":"WebPage","@id":"https://ghiliweld.github.io/blog/mev/2022/01/20/frontrunning-3074.html"},"description":"Studying New Possibilities and Cause for Concern","@context":"https://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+<link rel="stylesheet" href="/blog/assets/css/style.css"><link type="application/atom+xml" rel="alternate" href="https://ghiliweld.github.io/blog/feed.xml" title="ghilia" /><link rel="shortcut icon" type="image/x-icon" href="/blog/images/favicon.ico"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Primer/15.2.0/primer.css" integrity="sha512-xTz2ys4coGAOz8vuV1NcQBkgVmKhsSEtjbqyMJbBHRplFuvKIUo6xhLHpAyPt9mfR6twHJgn9OgVLuqOvjeBhg==" crossorigin="anonymous" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.14.0/css/all.min.css" integrity="sha512-1PKOgIY59xJ8Co8+NE6FZ+LOAZKjy+KY8iq0G4B3CyeY6wYHN3yt9PW0XpSriVlkMXe40PTKnXrLnZ9+fkDaog==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.css" integrity="sha512-h7nl+xz8wgDlNM4NqKEM4F1NkIRS17M9+uJwIGwuo8vGqIl4BhuCKdxjWEINm+xyrUjNCnK5dCrhM0sj+wTIXw==" crossorigin="anonymous" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/katex.min.js" integrity="sha512-/CMIhXiDA3m2c9kzRyd97MTb3MC6OVnx4TElQ7fkkoRghwDf6gi41gaT1PwF270W6+J60uTmwgeRpNpJdRV6sg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.12.0/contrib/auto-render.min.js" integrity="sha512-Do7uJAaHZm5OLrIv/yN4w0iG1dbu01kzdMNnFfu/mAqgUk6Nniv2JYHcwH+cNwjqgLcqcuBBk+JRvprLVI8azg==" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js" integrity="sha512-0doc9hKxR3PYwso42RD1p5ySZpzzuDiOwMrdCEh2WdJZCjcmFKc/wEnL+z8fBQrnHoiNWbo+3fiGkOYXBdQp4A==" crossorigin="anonymous"></script>
+    <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        renderMathInElement( document.body, {
+        delimiters: [
+            {left: "$$", right: "$$", display: true},
+            {left: "[%", right: "%]", display: true},
+            {left: "$", right: "$", display: false}
+        ]}
+        );
+    });
+    </script>
+
+
+<script>
+function wrap_img(fn) {
+    if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        var elements = document.querySelectorAll(".post img");
+        Array.prototype.forEach.call(elements, function(el, i) {
+            if (el.getAttribute("title") && (el.className != "emoji")) {
+                const caption = document.createElement('figcaption');
+                var node = document.createTextNode(el.getAttribute("title"));
+                caption.appendChild(node);
+                const wrapper = document.createElement('figure');
+                wrapper.className = 'image';
+                el.parentNode.insertBefore(wrapper, el);
+                el.parentNode.removeChild(el);
+                wrapper.appendChild(el);
+                wrapper.appendChild(caption);
+            }
+        });
+    } else { document.addEventListener('DOMContentLoaded', fn); }
+}
+window.onload = wrap_img;
+</script>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function(){
+    // add link icon to anchor tags
+    var elem = document.querySelectorAll(".anchor-link")
+    elem.forEach(e => (e.innerHTML = '<i class="fas fa-link fa-xs"></i>'));
+    });
+</script>
+</head>
+<body><header class="site-header">
+
+  <div class="wrapper"><a class="site-title" rel="author" href="/blog/">ghilia</a><nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.032C17.335,0,18,0.665,18,1.484L18,1.484z M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.032C17.335,6.031,18,6.696,18,7.516L18,7.516z M18,13.516C18,14.335,17.335,15,16.516,15H1.484 C0.665,15,0,14.335,0,13.516l0,0c0-0.82,0.665-1.483,1.484-1.483h15.032C17.335,12.031,18,12.695,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger"><a class="page-link" href="/blog/search/">Search</a><a class="page-link" href="/blog/categories/">Tags</a></div>
+      </nav></div>
+</header>
+<main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post h-entry" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title p-name" itemprop="name headline">Frontrunning Post EIP-3074</h1><p class="page-description">Studying New Possibilities and Cause for Concern</p><p class="post-meta post-meta-title"><time class="dt-published" datetime="2022-01-20T00:00:00-06:00" itemprop="datePublished">
+        Jan 20, 2022
+      </time>
+       • <span class="read-time" title="Estimated read time">
+    
+    
+      4 min read
+    
+</span></p>
+
+    
+      <p class="category-tags"><i class="fas fa-tags category-tags-icon"></i></i> 
+      
+        <a class="category-tags-link" href="/blog/categories/#mev">mev</a>
+        
+      
+      </p>
+    
+
+    </header>
+
+  <div class="post-content e-content" itemprop="articleBody">
+    <p>Are you reading up on new <a href="https://eips.ethereum.org/all">EIPs</a> for alpha, anon? One of my favourite passtimes is trying to predict the landscape of MEV in the near future. I sometimes find myself getting ideas for strategies that might be profitable later on, just not now.</p>
+
+<p>Reading up on <a href="https://eips.ethereum.org/EIPS/eip-3074">EIP-3074</a> was one of those moments. I’ll be sharing an interesting frontrunning strategy I came up with that could work post 3074, and how I think 3074 could <em>transform</em> but not <em>exacerbate</em> MEV.</p>
+
+<p>I’m not usually one for posting predictions, but some interesting ideas came up from this that I felt should be published.</p>
+
+<h2 id="a-primer-on-eip-3074">A Primer on EIP-3074</h2>
+
+<p>One glaring UX problem on Ethereum is the fact that Externally Owned Accounts (basically your wallet) can’t make multiple calls to different smart contracts in one tx (multicalls). That’s why we have the approve tx -&gt; swap tx flow for ERC20 swaps on DEXs today. EIP-3074 solves this, among other things. It doesn’t let you make multicalls from your EOA directly, but it does allow a contract to make calls to other contracts <em>as if</em> it was coming from your EOA (i.e. <code class="language-plaintext highlighter-rouge">msg.sender = EOA</code>) which achieves the same thing.</p>
+
+<p>The EIP introduces two new opcodes, <code class="language-plaintext highlighter-rouge">AUTH</code> and <code class="language-plaintext highlighter-rouge">AUTHCALL</code>, and a new solidity built-in function <code class="language-plaintext highlighter-rouge">authorize</code>. The contract we make the 3074-tx through is called an <strong>invoker</strong>. The flow is simple:</p>
+
+<ul>
+  <li>a user signs a <code class="language-plaintext highlighter-rouge">commitment</code> (hash) of what they want their tx to do, and signs it</li>
+  <li>the user calls the invoker and passes in what contract they want to call, along with the calldata, and the signature of the commitment</li>
+  <li>the invoker hashes the args to reconstruct the commitment</li>
+  <li><code class="language-plaintext highlighter-rouge">authorize(commitment, signature)</code> returns the user’s EOA address and also loads it in temporary storage by the <code class="language-plaintext highlighter-rouge">AUTH</code> opcode</li>
+  <li>the invoker makes an <code class="language-plaintext highlighter-rouge">AUTHCALL</code> with the contract and calldata (like <code class="language-plaintext highlighter-rouge">contract.authcall(calldata);</code>)</li>
+  <li>the <code class="language-plaintext highlighter-rouge">msg.sender</code> in that authcall will be our user’s address even thought the invoker (a contract) is making the call</li>
+</ul>
+
+<p>Note that since a signature and commitment is all that’s needed to get the EOA address, the user doesn’t have to submit this themselves. In fact, someone could pay the gas fees for them and submit it on their behalf. Sponsoring gas fess was also a motivation for the EIP.</p>
+
+<p>An invoker contract will look something like this:</p>
+
+<div class="jekyll-twitter-plugin"><blockquote class="twitter-tweet"><p lang="en" dir="ltr">The commit hash would be regenerated by the invoker using the values passed in. This way, if a sponsor changes a value, the invoker will compute a different commit hash than the EOA signed, causing AUTH to recover a junk address. That might look something like this: <a href="https://t.co/RN2Fpr0tLm">pic.twitter.com/RN2Fpr0tLm</a></p>&mdash; ً (@lightclients) <a href="https://twitter.com/lightclients/status/1371911261001183232?ref_src=twsrc%5Etfw">March 16, 2021</a></blockquote>
+<script async="" src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
+</div>
+
+<h2 id="extract-and-rewrap">Extract and Rewrap</h2>
+
+<ul>
+  <li>a 3074 tx is like a multicall</li>
+  <li>we already know searchers are looking at internal calls made</li>
+  <li>a searcher could extract, rewrap and submit other’s internal calls</li>
+  <li>demonstrate 1-tx-sandwich</li>
+</ul>
+
+<p>One way of thinking about 3074 txs is like multicalls that <em>anyone</em> can do on your behalf provided they have the commitment and your signature. The individuals calls to other contracts will look like regular internal contract calls to anyone viewing your transaction. This is where the fun part starts. If you’ve read <a href="https://www.paradigm.xyz/2020/08/ethereum-is-a-dark-forest/">Ethereum is a Dark Forest</a> then you’ll know that advanced searchers are lurking in the mempool for any profitable transactions, even going so far as to look over <em>internal calls</em> that they can frontrun. What happens when a 3074 tx is making internal calls that we can not only frontrun, but extract and include in our tx instead? A quick example can demonstrate why a searcher would do that.</p>
+
+<div class="language-md highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sandwich tx 1 (buy)                                             sandwich tx {
+victim's 3074 tx {                                                  - sandwich buy
+<span class="p">    -</span> DEX swap (this is an internal call)       vs                  - victim's DEX swap (that we extracted)
+}                                                                   - sandwich sell
+sandwich tx 2 (sell)                                            }
+</code></pre></div></div>
+
+<p>We were able to sandwich an incoming 3074 tx the traditional way (over 3 txs) or we could extract the commitment and signature details from the pending DEX swap and place it in our own tx, that way we could execute a sandwich in only one trade! We get some interesting results from this:</p>
+
+<ul>
+  <li>we are paying a victim’s gas fees in exchange for screwing them over by sandwiching them (chaotic neutral?)</li>
+  <li>we save on gas since we’re executing a sandwich in 1 tx</li>
+  <li>we can take out a flashloan to sandwich a trade instead of putting up our own capital</li>
+</ul>
+
+<p>What actually got me looking at EIP-3074 in the first place was because I wanted to take out a flashloan to execute a sandwich, which isn’t possible over 3 txs since I’d need to return what I borrowed in the same tx. Where arbitrage was the only strategy that could use flashloans, 3074 now opens up flashloans for use in many more MEV strategies.</p>
+
+<hr />
+
+<p>I don’t think these scenarios are any cause for concern, the existence of EIP-3074 didn’t create new MEV opportunites it just changed how we could profit from them. Notice how even if we didn’t extract the internal call, the swap was still very much sandwichable. The only difference is someone with enough capital could have taken full advantage of the sandwich in the first scenario, whereas the second one doesn’t have any capital requirements (besides gas fees ofc). I think that’s pretty cool, it levels the playing field even more in my opinion.</p>
+
+<p>gud eip honestly.</p>
+
+<p>Thank you for reading :)</p>
+
+  </div><a class="u-url" href="/blog/mev/2022/01/20/frontrunning-3074.html" hidden></a>
+</article>
+
+      </div>
+    </main><footer class="site-footer h-card">
+  <data class="u-url" href="/blog/"></data>
+
+  <div class="wrapper">
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col">
+        <p class="feed-subscribe">
+          <a href="/blog/feed.xml">
+            <svg class="svg-icon orange">
+              <use xlink:href="/blog/assets/minima-social-icons.svg#rss"></use>
+            </svg><span>Subscribe</span>
+          </a>
+        </p>
+      </div>
+      <div class="footer-col">
+        <p>welcome to my blog!</p>
+      </div>
+    </div>
+
+    <div class="social-links"><ul class="social-media-list"><li><a rel="me" href="https://github.com/ghiliweld" target="_blank" title="ghiliweld"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#github"></use></svg></a></li><li><a rel="me" href="https://twitter.com/ghiliweld" target="_blank" title="ghiliweld"><svg class="svg-icon grey"><use xlink:href="/blog/assets/minima-social-icons.svg#twitter"></use></svg></a></li></ul>
+</div>
+
+  </div>
+
+</footer>
+</body>
+
+</html>
